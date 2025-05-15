@@ -1,0 +1,65 @@
+.login-register-or-text-container {
+  margin: 8px 0 12px;
+  padding: 24px 0 14px 0;
+  position: relative;
+  text-align: center;
+  line-height: 1;
+}
+
+.login-register-or-text-container::before {
+  background-color: black;
+  content: "";
+  height: 1px;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: calc(24px + 24px/4);
+}
+
+.login-register-or-text-container .login-register-or-text {
+  background-color: #fff;
+  padding: 0 12px;
+  position: relative;
+}
+
+.btn-login {
+  background-color: #ffffffab;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-color: black;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px rgba(0, 0, 0, 0.075);
+  border-radius: 100px;
+}
+
+.btn-login:hover {
+  background-color: #e7e9ee;
+}
+
+.btn-login img {
+  padding-right: 10px;
+}
+
+.login-container {
+  padding-bottom: 24px;
+  max-width: 400px;
+  text-align: center;
+}
+
+.w-67c {
+  margin: auto;
+  width: 67% !important;
+}
+
+.w-100 {
+  width: 100% !important;
+}
+
+.login-container .control-medium,
+.login-container .form-group .controls {
+  text-align: left;
+}
+
+.login-container .form-group {
+  margin-bottom: 20px !important;
+}

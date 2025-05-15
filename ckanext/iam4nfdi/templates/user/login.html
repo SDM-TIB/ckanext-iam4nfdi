@@ -1,0 +1,24 @@
+{% ckan_extends %}
+
+{% block primary_content %}
+  {% asset 'iam4nfdi/main' %}
+  <section class="module">
+    <div class="module-content">
+      <h1 class="page-heading">{% block page_heading %}{{ _('Login') }}{% endblock %}</h1>
+    </div>
+
+    <div class="login-container w-67c">
+      <button class="btn btn-login w-100" onclick="window.location.href='{{h.url_for('home')}}oauth2/login/regapp'">
+        <img src="{{h.url_for('home')}}images/Logo_IAM4NFDI_lang_rgb.png" height="24px" alt="{{ _('Log in with IAM4nfdi') }}"/>{{ _('Log in with IAM4nfdi') }}
+      </button>
+
+      <p class="login-register-or-text-container">
+        <span class="login-register-or-text">OR</span>
+      </p>
+
+      {% block form %}
+        {{ super() }}
+      {% endblock %}
+    </div>
+  </section>
+{% endblock %}

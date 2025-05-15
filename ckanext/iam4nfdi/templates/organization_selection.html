@@ -1,0 +1,19 @@
+{% extends "page.html" %}
+
+{% block primary_content %}
+  {% asset 'iam4nfdi/org-sel' %}
+  <article class="module" role="main">
+    <div class="module-content">
+      <h1>Organization Selection</h1>
+      <form method="post" action="{{ h.url_for('iam4nfdi.organization_selection_post') }}">
+        <label for="items">Select your organizations</label>
+        <ul id="org-list" class="scrollable-list">
+          {% for organization in organizations %}
+            <li><input type="checkbox" id="item-{{ loop.index }}" name="items" value="{{ organization["id"] }}"><label for="item-{{ loop.index }}"> {{ organization["name"] }}</label></li>
+          {% endfor %}
+        </ul>
+        <button type="submit" class="btn btn-primary">Save</button>
+      </form>
+    </div>
+  </article>
+{% endblock %}

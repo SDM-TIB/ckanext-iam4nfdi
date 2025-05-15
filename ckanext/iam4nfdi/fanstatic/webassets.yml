@@ -1,0 +1,27 @@
+main-css:
+  output: iam4nfdi/%(version)s_iam4nfdi.css
+  filter: cssrewrite
+  contents:
+    - css/iam4nfdi.css
+
+main:
+  output: iam4nfdi/%(version)s_iam4nfdi.js
+  extra:
+    preload:
+      - iam4nfdi/main-css
+  contents:
+    - js/iam4nfdi.js
+
+org-sel-css:
+  output: iam4nfdi/%(version)s_org-sel.css
+  filter: cssrewrite
+  contents:
+    - css/org-sel.css
+
+org-sel:
+  output: iam4nfdi/%(version)s_org-sel.js
+  extra:
+    preload:
+      - iam4nfdi/org-sel-css
+  contents:
+    - js/org-sel.js
