@@ -1,0 +1,49 @@
+# Translations template for ckanext-iam4nfdi.
+# Copyright (C) 2025 ORGANIZATION
+# This file is distributed under the same license as the ckanext-iam4nfdi
+# project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: ckanext-iam4nfdi 0.1.0\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2025-05-15 13:41+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
+
+#: ckanext/iam4nfdi/views.py:39 ckanext/iam4nfdi/views.py:81
+msgid "Need to be logged in to select an organization."
+msgstr ""
+
+#: ckanext/iam4nfdi/templates/error_page.html:3
+msgid "Error"
+msgstr ""
+
+#: ckanext/iam4nfdi/templates/error_page.html:8
+msgid "An error occurred"
+msgstr ""
+
+#: ckanext/iam4nfdi/templates/error_page.html:10
+msgid "Please try again or contact the site administrator if the problem persists."
+msgstr ""
+
+#: ckanext/iam4nfdi/templates/oauth2_result.html:4
+#: ckanext/iam4nfdi/templates/oauth2_result.html:13
+msgid "Oauth2 results"
+msgstr ""
+
+#: ckanext/iam4nfdi/templates/user/login.html:7
+msgid "Login"
+msgstr ""
+
+#: ckanext/iam4nfdi/templates/user/login.html:12
+msgid "Log in with IAM4nfdi"
+msgstr ""
+
