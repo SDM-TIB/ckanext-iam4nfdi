@@ -1,7 +1,7 @@
 import logging
 
 import flask
-from ckan.common import config
+import ckan.lib.helpers as h
 from authlib.integrations.flask_client import OAuth
 import secrets
 import string
@@ -13,9 +13,14 @@ log = logging.getLogger(__name__)
 
 class OAuth2Controller:
     def __init__(self):
-        self.site_url = config.get('ckan.site_url', 'http://localhost:5000') + config.get('ckan.post_url', '/')
         self.oauth = OAuth(flask.current_app)
-        self.profiles = self._get_oauth2_profiles()
+        self._profiles = None
+
+    @property
+    def profiles(self):
+        if self._profiles is None:
+            self._profiles = self._get_oauth2_profiles()
+        return self._profiles
 
     def _get_oauth2_profiles(self):
         profiles = {}
@@ -33,9 +38,10 @@ class OAuth2Controller:
 
         regapp_remote_app = self.oauth.register('regapp', **regapp_profile)
 
+        site_url = h.url_for('home.index', _external=True)
         profiles['regapp']['remote_app'] = regapp_remote_app
-        profiles['regapp']['callback_url'] = self.site_url + 'oauth2/callback/regapp'
-        log.debug('Callback URL: ' + self.site_url + 'oauth2/callback/regapp')
+        profiles['regapp']['callback_url'] = site_url + 'oauth2/callback/regapp'
+        log.debug('Callback URL: ' + site_url + 'oauth2/callback/regapp')
 
         return profiles
 

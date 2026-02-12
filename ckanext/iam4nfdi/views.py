@@ -26,7 +26,7 @@ def inject_request(func):
 def redirect_response(request_, user_found=True):
     next_ = request_.args.get('next', request_.args.get('came_from'))
     if not user_found:
-        resp = h.helper_functions.redirect_to('/organization_selection')
+        resp = h.helper_functions.redirect_to(h.url_for('iam4nfdi.organization_selection'))
     elif next_ and h.url_is_local(next_):
         resp = h.helper_functions.redirect_to(next_)
     else:
