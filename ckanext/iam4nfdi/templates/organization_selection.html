@@ -9,7 +9,7 @@
         <label for="items">Select your organizations</label>
         <ul id="org-list" class="scrollable-list">
           {% for organization in organizations %}
-            <li><input type="checkbox" id="item-{{ loop.index }}" name="items" value="{{ organization["id"] }}"><label for="item-{{ loop.index }}"> {{ organization["name"] }}</label></li>
+            <li><input type="checkbox" id="item-{{ loop.index }}" name="items" value="{{ organization["id"] }}" {% if organization['id'] in user_orgs %}checked{% endif %}><label for="item-{{ loop.index }}"> {{ organization["name"] }}</label></li>
           {% endfor %}
         </ul>
         <button type="submit" class="btn btn-primary">Save</button>

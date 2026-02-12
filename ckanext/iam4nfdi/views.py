@@ -34,11 +34,11 @@ def redirect_response(request_, user_found=True):
     return resp
 
 
-def organization_selection():
-    if not toolkit.c.user:
-        base.abort(403, toolkit._('Need to be logged in to select an organization.'))
-
-    # Query for finding all organization memberships of the current user
+def _user_organizations():
+    """
+    Get all organization memberships of the current user.
+    Returns a list with the names of the organizations.
+    """
     q = model.Session.query(model.Member, model.Group) \
         .filter(model.Member.table_name == 'user') \
         .filter(model.Member.table_id == model.User.get(toolkit.c.user).id) \
@@ -47,14 +47,21 @@ def organization_selection():
         .filter(model.Group.is_organization == True) \
         .filter(model.Group.state == 'active')
 
-    if q.first():  # check if the user belongs to at least one organization
-        toolkit.h.flash_notice('You have selected an organization already.')
-        return redirect_response()
+    q_res = q.all()
+    user_orgs = []
+    for res in q_res:
+        user_orgs.append(res[1].name)
+
+    return user_orgs
+
+
+def organization_selection():
+    if not toolkit.c.user:
+        base.abort(403, toolkit._('Need to be logged in to select an organization.'))
 
     context = {'model': model, 'session': model.Session, 'user': 'guest'}
-    data_dict = {}
 
-    organization_ids = toolkit.get_action('organization_list')(context, data_dict)
+    organization_ids = toolkit.get_action('organization_list')(context, {})
     organizations = []
     data_dict = {
         'include_dataset_count': False,
@@ -73,14 +80,18 @@ def organization_selection():
                 'id': oid
             })
 
-    return toolkit.render('organization_selection.html', {'organizations': organizations})
+    return toolkit.render('organization_selection.html',
+                          extra_vars={
+                              'organizations': organizations,
+                              'user_orgs': _user_organizations()
+                          })
 
 
 def organization_selection_post():
     if not toolkit.c.user:
         base.abort(403, toolkit._('Need to be logged in to select an organization.'))
 
-    orgs_selected = request.form.getlist('items')
+    orgs_selected = set(request.form.getlist('items'))
 
     context = {
         'model': model,
@@ -94,10 +105,19 @@ def organization_selection_post():
         'capacity': 'editor'
     }
 
-    for org in orgs_selected:
+    user_orgs = set(_user_organizations())
+    to_delete = user_orgs - orgs_selected
+    to_add = orgs_selected - user_orgs
+
+    for org in to_add:
         data_dict['id'] = org
         toolkit.get_action('member_create')(context, data_dict)
 
+    for org in to_delete:
+        data_dict['id'] = org
+        toolkit.get_action('member_delete')(context, data_dict)
+
+    toolkit.h.flash_success('Your organization memberships have been updated successfully.')
     return redirect_response()
 
 
