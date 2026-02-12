@@ -1,15 +1,15 @@
 # Translations template for ckanext-iam4nfdi.
-# Copyright (C) 2025 ORGANIZATION
+# Copyright (C) 2026 ORGANIZATION
 # This file is distributed under the same license as the ckanext-iam4nfdi
 # project.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: ckanext-iam4nfdi 0.1.0\n"
+"Project-Id-Version: ckanext-iam4nfdi 0.2.0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-05-15 13:41+0200\n"
+"POT-Creation-Date: 2026-02-12 14:16+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.10.3\n"
 
-#: ckanext/iam4nfdi/views.py:39 ckanext/iam4nfdi/views.py:81
+#: ckanext/iam4nfdi/views.py:60 ckanext/iam4nfdi/views.py:92
 msgid "Need to be logged in to select an organization."
 msgstr ""
 
@@ -39,11 +39,27 @@ msgstr ""
 msgid "Oauth2 results"
 msgstr ""
 
+#: ckanext/iam4nfdi/templates/organization_selection.html:7
+msgid "Organization Selection"
+msgstr ""
+
+#: ckanext/iam4nfdi/templates/organization_selection.html:9
+msgid "Select your organizations"
+msgstr ""
+
+#: ckanext/iam4nfdi/templates/organization_selection.html:15
+msgid "Save"
+msgstr ""
+
 #: ckanext/iam4nfdi/templates/user/login.html:7
 msgid "Login"
 msgstr ""
 
 #: ckanext/iam4nfdi/templates/user/login.html:12
 msgid "Log in with IAM4nfdi"
+msgstr ""
+
+#: ckanext/iam4nfdi/templates/user/read_base.html:7
+msgid "Change Organization"
 msgstr ""
 

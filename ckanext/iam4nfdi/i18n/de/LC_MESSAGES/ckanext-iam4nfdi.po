@@ -6,9 +6,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: ckanext-iam4nfdi 0.1.0\n"
+"Project-Id-Version: ckanext-iam4nfdi 0.2.0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-05-15 13:41+0200\n"
+"POT-Creation-Date: 2026-02-12 14:16+0100\n"
 "PO-Revision-Date: 2025-05-15 13:42+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: de\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.10.3\n"
 
-#: ckanext/iam4nfdi/views.py:39 ckanext/iam4nfdi/views.py:81
+#: ckanext/iam4nfdi/views.py:60 ckanext/iam4nfdi/views.py:92
 msgid "Need to be logged in to select an organization."
 msgstr "Sie müssen angemeldet sein, um eine Organization auszuwählen."
 
@@ -35,12 +35,26 @@ msgstr "Ein Fehler ist aufgetreten"
 msgid ""
 "Please try again or contact the site administrator if the problem "
 "persists."
-msgstr "Bitte versuchen Sie es erneut oder wenden Sie sich an den Administrator der Website, wenn das Problem weiterhin besteht."
+msgstr ""
+"Bitte versuchen Sie es erneut oder wenden Sie sich an den Administrator "
+"der Website, wenn das Problem weiterhin besteht."
 
 #: ckanext/iam4nfdi/templates/oauth2_result.html:4
 #: ckanext/iam4nfdi/templates/oauth2_result.html:13
 msgid "Oauth2 results"
 msgstr "oAuth2-Ergebnisse"
+
+#: ckanext/iam4nfdi/templates/organization_selection.html:7
+msgid "Organization Selection"
+msgstr "Organisationsauswahl"
+
+#: ckanext/iam4nfdi/templates/organization_selection.html:9
+msgid "Select your organizations"
+msgstr "Wählen Sie Ihre Organisationen aus"
+
+#: ckanext/iam4nfdi/templates/organization_selection.html:15
+msgid "Save"
+msgstr "Speichern"
 
 #: ckanext/iam4nfdi/templates/user/login.html:7
 msgid "Login"
@@ -49,4 +63,8 @@ msgstr "Anmelden"
 #: ckanext/iam4nfdi/templates/user/login.html:12
 msgid "Log in with IAM4nfdi"
 msgstr "Anmelden mit IAM4nfdi"
+
+#: ckanext/iam4nfdi/templates/user/read_base.html:7
+msgid "Change Organization"
+msgstr "Organisation ändern"
 
