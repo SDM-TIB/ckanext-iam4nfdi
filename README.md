@@ -8,7 +8,7 @@
 `ckanext-iam4nfdi` is a CKAN extension allowing users to log in through the [IAM4nfdi](https://base4nfdi.de/projects/iam4nfdi) application [RegApp](https://www.nfdi-aai.de/community-aai-software/#regapp) using OpenID Connect.
 
 > [!NOTE]
-> The current version of this CKAN extension allows users to select their organizations themselves during the first login.
+> The current version of this CKAN extension allows users to select their organizations themselves.
 
 ## Installation
 
