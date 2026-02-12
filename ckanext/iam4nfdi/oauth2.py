@@ -65,8 +65,7 @@ class OAuth2Controller:
             "name": username,
             "fullname": regapp_user_data["name"],
             "email": regapp_user_data["email"],
-            "password": self._generate_password(),
-            "image_url": None,  # Default to None if no valid image URL is provided
+            "password": self._generate_password()
         }
 
         return user_dict
